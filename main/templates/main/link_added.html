@@ -1,0 +1,29 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <main class="">
+        <form class="" >
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="link" class="">Original Link</label>
+                        <input type="text" class="form-control" value="{{ original_url }}"
+                        id="link" aria-describedby="textHelp" readonly>
+                        <small id="textHelp" class="form-text text-muted">The original Url.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="link2" class="">Generated Link</label>
+                        <input type="text" 
+                        value="{{request.get_host}}{% url 'main:short-url' new_link %}" 
+                        class="form-control" id="link2" aria-describedby="textHelp2" readonly>
+                        <small id="textHelp2" class="form-text text-muted">The generated one.</small>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+{% endblock content %}

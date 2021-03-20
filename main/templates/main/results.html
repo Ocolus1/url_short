@@ -1,0 +1,39 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <main class="stats-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-3">
+                    <h4>Search query:</h4>
+                    <p>{{ query }}</p>
+                </div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Short Url</th>
+                                <th scope="col">Visits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for link in query_set %}
+                            <tr>
+                                <th scope="row">{{ link.id}}</th>
+                                <td>{{request.get_host}}{% url 'main:short-url' link.short_url %}</td>
+                                <td>{{ link.visits }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock content %}
+
+

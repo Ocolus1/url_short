@@ -1,0 +1,36 @@
+{% load static %}
+<style>
+    nav {
+        background-color: #002C54;
+        color: white;
+        margin: 0;
+        border: 2px solid black;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #818181;
+    }
+</style>
+
+<div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+              <i class="fa fa-align-justify text-white rounded fs-2"></i>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{% url 'main:index' %}">Home</a>
+              <a class="nav-link" href="{% url 'main:search' %}">Search</a>
+              <a class="nav-link" href="https://www.cypherspot.dev/#contact" target="_blank">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+</div>

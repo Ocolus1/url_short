@@ -1,0 +1,25 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <main class="index-main">
+        <form action="{% url 'main:add-link' %}" class="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="link" class="form-label">Enter Link</label>
+                        <input type="text" class="form-control" name="original_url"  
+                        id="link" placeholder="Place in your url here.">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn rounded-pill p-2 my-1" 
+                        type="submit" id="mp3_btn">Shorten Url</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+{% endblock content %}

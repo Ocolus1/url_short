@@ -1,0 +1,25 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <main class="search-page">
+        <form action="{% url 'main:stats' %}" class="">
+            <div class="mb-3">
+                <div class="position-relative">
+                    <input class="form-control me-2" type="text" 
+                    placeholder="Search for your link.." id="search" name="q" aria-label="Search">
+                    <div class="position-absolute top-50 end-0 translate-middle-y">
+                        <button type="submit" class="submit btn btn-transparent">
+                            <i class="	fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </main>
+</div>
+{% endblock content %}
+
+
